@@ -1,0 +1,255 @@
+:root {
+    --primary-orange: #FF8C00; /* Darker orange for header elements */
+    --light-orange: #FFA500; /* Brighter orange for logo/accents */
+    --dark-red: #8B0000; /* Maroon/dark red */
+    --background-light: #F8F8F8; /* Light gray background */
+    --text-dark: #333;
+    --text-light: #FFF;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--dark-red);
+    color: var(--text-light);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.logo {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--light-orange);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: 30px;
+}
+
+.logo img {
+    position: relative;
+    top: 5px;
+    width: 70px;
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.1em;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav ul li .active {
+    background-color: var(--primary-orange);
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+section {
+    padding: 30px 0;
+}
+
+section h2 {
+    text-align: center;
+    color: var(--dark-red);
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-orange);
+    margin: 10px auto 0;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 550px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-text {
+    flex: 2;
+    min-width: 300px;
+    font-size: 1.1em;
+    color: var(--text-dark);
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+.city-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.city-list li {
+    background-color: var(--background-light);
+    padding: 8px 12px;
+    border-left: 3px solid var(--primary-orange);
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.contact-info {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+}
+
+.contact-item i {
+    color: var(--primary-orange);
+    margin-right: 15px;
+    font-size: 1.5em;
+    width: 30px; /* Ensure consistent icon alignment */
+    text-align: center;
+}
+
+.contact-item a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--dark-red);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--dark-red);
+    color: var(--text-light);
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-image {
+        width: 100%;
+        max-width: 450px; /* Constrain image on smaller screens */
+    }
+
+    .about-text, .contact-info {
+        padding: 0;
+    }
+
+    .city-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        margin: 15px auto;
+        padding: 10px;
+    }
+
+    section h2 {
+        font-size: 1.8em;
+    }
+}
